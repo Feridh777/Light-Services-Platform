@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact - Light Services</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <img src="assets/logo.png" alt="Light Services">
+      <div>
+        <h1>Light Services</h1>
+        <p id="slogan">—</p>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html" id="navHome">Accueil</a>
+      <a href="services.html" id="navServices">Nos services</a>
+      <a href="contact.html" id="navContact">Contact</a>
+      <select class="langSwitcher" aria-label="Language selector">
+        <option value="fr">Français</option>
+        <option value="en">English</option>
+      </select>
+    </nav>
+  </header>
+
+  <main>
+    <h2 id="contactTitle">Demande de dépannage</h2>
+
+    <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <div>
+        <label for="name" id="labelName">Nom complet</label><br>
+        <input id="name" name="name" type="text" required>
+      </div>
+      <div>
+        <label for="email" id="labelEmail">Email</label><br>
+        <input id="email" name="email" type="email" required>
+      </div>
+      <div>
+        <label for="phone" id="labelPhone">Téléphone</label><br>
+        <input id="phone" name="phone" type="tel" required>
+      </div>
+      <div>
+        <label for="service" id="labelService">Type de service</label><br>
+        <select id="service" name="service">
+          <option value="plomberie">Plomberie</option>
+          <option value="electricite">Électricité</option>
+          <option value="serrurerie">Serrurerie</option>
+          <option value="thermique">Équipements Thermiques (Chaud & Froid)</option>
+          <option value="menuiserie">Menuiserie</option>
+          <option value="maconnerie">Maçonnerie</option>
+          <option value="urgence">Urgences 24/7</option>
+          <option value="maintenance">Maintenance préventive</option>
+        </select>
+      </div>
+      <div style="grid-column:span 2">
+        <label for="message" id="labelMessage">Description</label><br>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+
+      <button class="btn primary" id="contactSubmit" type="submit">Envoyer la demande</button>
+    </form>
+
+    <p class="note">
+      Remplace <b>YOUR_FORM_ID</b> par ton identifiant Formspree quand tu seras prêt.
+    </p>
+    <p><a href="index.html" id="backHome">Retour à l'accueil</a></p>
+  </main>
+
+  <footer>© 2026 Light Services</footer>
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", ()=>{
+      const h = document.getElementById("contactTitle");
+      const s = document.getElementById("slogan");
+      if(h && s) s.textContent = h.textContent;
+    });
+  </script>
+</body>
+</html>

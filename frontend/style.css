@@ -1,0 +1,50 @@
+:root{
+  --blue:#1d4ed8;
+  --orange:#f97316;
+  --muted:#64748b;
+  --bg:#f8fafc;
+  --card:#ffffff;
+  --text:#0f172a;
+}
+
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial, sans-serif;background:var(--bg);color:var(--text)}
+header{background:#fff;box-shadow:0 1px 6px rgba(2,6,23,.08);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:70px}
+.brand h1{font-size:18px;margin:0}
+.brand p{margin:0;color:var(--muted);font-size:13px}
+nav a{color:var(--muted);text-decoration:none;margin-right:14px}
+nav a:hover{color:var(--blue)}
+nav select{padding:6px;border-radius:8px;border:1px solid #e2e8f0}
+main{max-width:1100px;margin:24px auto;padding:0 16px}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:18px;align-items:center}
+.hero h2{font-size:30px;margin:0 0 10px;color:var(--blue)}
+.hero .lead{color:var(--muted);font-size:16px;margin:0 0 16px}
+.hero img{width:100%;height:auto;border-radius:16px;box-shadow:0 12px 30px rgba(2,6,23,.12);background:#fff}
+.btn{display:inline-block;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700}
+.btn.primary{background:var(--blue);color:#fff}
+.btn.outline{border:2px solid var(--blue);color:var(--blue);background:#fff;margin-left:10px}
+.section{margin-top:28px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.card{background:var(--card);border-radius:14px;padding:14px;box-shadow:0 6px 18px rgba(2,6,23,.06)}
+.card .icon{font-size:26px}
+.card h3{margin:10px 0 6px}
+.card p{margin:0;color:var(--muted);font-size:14px}
+footer{margin-top:34px;padding:18px;text-align:center;background:#0f172a;color:#fff}
+form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+label{font-weight:700;font-size:13px}
+input, select, textarea{padding:10px;border:1px solid #e2e8f0;border-radius:10px}
+textarea{grid-column:span 2;min-height:120px}
+form .btn{grid-column:span 2;text-align:center;border:none;cursor:pointer}
+.note{color:var(--muted);font-size:13px}
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  form{grid-template-columns:1fr}
+  textarea{grid-column:span 1}
+}
+@media(max-width:520px){
+  .grid{grid-template-columns:1fr}
+  .btn.outline{margin-left:0;margin-top:10px}
+}
