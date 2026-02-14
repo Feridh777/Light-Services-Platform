@@ -7,9 +7,12 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <header>
     <div class="brand">
-      <img src="assets/logo.png" alt="Light Services">
+      <a href="index.html" aria-label="Retour à l'accueil">
+        <img src="assets/logo.png" alt="Light Services">
+      </a>
       <div>
         <h1>Light Services</h1>
         <p id="slogan">—</p>
@@ -26,72 +29,77 @@
     </nav>
   </header>
 
-  <main>
-    <h2 id="contactTitle">Demande de dépannage</h2>
 
-    <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-      <div>
-        <label for="name" id="labelName">Nom complet</label><br>
-        <input id="name" name="name" type="text" required>
-      </div>
-      <div>
-        <label for="email" id="labelEmail">Email</label><br>
-        <input id="email" name="email" type="email" required>
-      </div>
-      <div>
-        <label for="phone" id="labelPhone">Téléphone</label><br>
-        <input id="phone" name="phone" type="tel" required>
-      </div>
-<div>
-  <label for="whatsapp" id="labelWhatsapp">WhatsApp</label><br>
-  <input id="whatsapp" name="whatsapp" type="tel" required>
+<main>
+  <h2 id="contactTitle">Demande de dépannage</h2>
+
+  <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <div>
+      <label for="name" id="labelName">Nom complet</label><br>
+      <input id="name" name="name" type="text" required>
+    </div>
+    <div>
+      <label for="email" id="labelEmail">Email</label><br>
+      <input id="email" name="email" type="email" required>
+    </div>
+    <div>
+      <label for="phone" id="labelPhone">Téléphone</label><br>
+      <input id="phone" name="phone" type="tel" required>
+    </div>
+    <div>
+      <label for="whatsapp" id="labelWhatsapp">WhatsApp</label><br>
+      <input id="whatsapp" name="whatsapp" type="tel" required>
+    </div>
+
+    
+<div style="grid-column:span 2" class="loc-wrap">
+  <label for="location" id="labelLocation">Lien Google Maps</label><br>
+  <input id="location" name="location" type="text" placeholder="https://maps.google.com/..." autocomplete="off" required>
+  <div id="locSuggestions" class="loc-suggestions" style="display:none"></div>
+  <div class="note" id="locationHelp">Copiez-collez votre position (lien Google Maps)</div>
+  <div class="loc-actions">
+    <button type="button" class="btn secondary" id="useGpsBtn">📍 Utiliser ma position actuelle</button>
+    <button type="button" class="btn outline" id="clearLocBtn">Effacer</button>
+  </div>
 </div>
 
-<div>
-  <label for="city" id="labelCity">Ville</label><br>
-  <input id="city" name="city" type="text" required>
-</div>
 
-<div>
-  <label for="district" id="labelDistrict">Quartier</label><br>
-  <input id="district" name="district" type="text" required>
-</div>
+    <div>
+      <label for="service" id="labelService">Type de service</label><br>
+      <select id="service" name="service">
+        <option value="plomberie">Plomberie</option>
+        <option value="electricite">Électricité</option>
+        <option value="serrurerie">Serrurerie</option>
+        <option value="thermique">Équipements Thermiques (Chaud & Froid)</option>
+        <option value="menuiserie">Menuiserie</option>
+        <option value="maconnerie">Maçonnerie</option>
+        <option value="urgence">Urgences 24/7</option>
+        <option value="maintenance">Maintenance préventive</option>
+      </select>
+    </div>
 
-      <div>
-        <label for="service" id="labelService">Type de service</label><br>
-        <select id="service" name="service">
-          <option value="plomberie">Plomberie</option>
-          <option value="electricite">Électricité</option>
-          <option value="serrurerie">Serrurerie</option>
-          <option value="thermique">Équipements Thermiques (Chaud & Froid)</option>
-          <option value="menuiserie">Menuiserie</option>
-          <option value="maconnerie">Maçonnerie</option>
-          <option value="urgence">Urgences 24/7</option>
-          <option value="maintenance">Maintenance préventive</option>
-        </select>
-      </div>
-      <div style="grid-column:span 2">
-        <label for="message" id="labelMessage">Description</label><br>
-        <textarea id="message" name="message" required></textarea>
-      </div>
+    <div style="grid-column:span 2">
+      <label for="message" id="labelMessage">Description</label><br>
+      <textarea id="message" name="message" required></textarea>
+    </div>
 
-      <button class="btn primary" id="contactSubmit" type="submit">Envoyer la demande</button>
-    </form>
+    <button class="btn primary" id="contactSubmit" type="submit">Envoyer la demande</button>
+  </form>
 
-    <p class="note">
-      Remplace <b>YOUR_FORM_ID</b> par ton identifiant Formspree quand tu seras prêt.
-    </p>
-    <p><a href="index.html" id="backHome">Retour à l'accueil</a></p>
-  </main>
+  <p class="note">
+    Remplace <b>YOUR_FORM_ID</b> par ton identifiant Formspree quand tu seras prêt.
+  </p>
+  <p><a href="index.html" id="backHome">Retour à l'accueil</a></p>
+</main>
 
-  <footer>© 2026 Light Services</footer>
-  <script src="script.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", ()=>{
-      const h = document.getElementById("contactTitle");
-      const s = document.getElementById("slogan");
-      if(h && s) s.textContent = h.textContent;
-    });
-  </script>
+<footer>© 2026 Light Services</footer>
+<script src="script.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", ()=>{
+    const h = document.getElementById("contactTitle");
+    const s = document.getElementById("slogan");
+    if(h && s) s.textContent = h.textContent;
+  });
+</script>
 </body>
 </html>

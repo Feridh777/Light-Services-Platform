@@ -1,11 +1,14 @@
-# Light Services - Frontend (MVP) - V6 FINAL
+# Light Services - Frontend (MVP) - V8 PRO
 
-Identique au V5 (design + traductions complètes + tes images),
-avec 1 seul changement :
-- Le service "Climatisation & Chauffage" devient :
-  - FR : Équipements Thermiques (Chaud & Froid)
-  - EN : Thermal Equipment (Hot & Cold)
+Basé sur V7 FULL (complet) sans suppression ni simplification.
 
-Images :
-- assets/logo.png
-- assets/technicien.jpg
+Ajouts V8 :
+- Logo cliquable (déjà ok)
+- Champ localisation amélioré :
+  - Suggestions (autocomplete) pendant la saisie
+  - Bouton GPS "Utiliser ma position actuelle" (remplit automatiquement)
+  - Bouton "Effacer"
+- Traduction FR/EN complète pour ces nouveaux éléments
+
+Note :
+- L'autocomplete utilise le service public Nominatim (OpenStreetMap).

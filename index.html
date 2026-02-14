@@ -7,9 +7,12 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <header>
     <div class="brand">
-      <img src="assets/logo.png" alt="Light Services">
+      <a href="index.html" aria-label="Retour à l'accueil">
+        <img src="assets/logo.png" alt="Light Services">
+      </a>
       <div>
         <h1>Light Services</h1>
         <p id="slogan">—</p>
@@ -26,75 +29,44 @@
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <div>
-        <h2 id="heroTitle">Le bon professionnel, au bon endroit, au bon moment</h2>
-        <p class="lead" id="heroLead">Des interventions rapides et fiables…</p>
-        <a class="btn primary" href="contact.html" id="btnRequest">Demander un service</a>
-        <a class="btn outline" href="services.html" id="btnServices">Voir nos services</a>
-      </div>
-      <div>
-        <img src="assets/technicien.jpg" alt="Technicien Light Services">
-      </div>
-    </section>
 
-    <section class="section">
-      <h2 id="servicesSectionTitle">Nos services</h2>
-      <div class="grid">
-        <div class="card">
-          <div class="icon">🔧</div>
-          <h3 id="s1Title">Plomberie</h3>
-          <p id="s1Text">—</p>
-        </div>
-        <div class="card">
-          <div class="icon">💡</div>
-          <h3 id="s2Title">Électricité</h3>
-          <p id="s2Text">—</p>
-        </div>
-        <div class="card">
-          <div class="icon">🔐</div>
-          <h3 id="s3Title">Serrurerie</h3>
-          <p id="s3Text">—</p>
-        </div>
-        <div class="card">
-          <div class="icon">🔥❄️</div>
-          <h3 id="s4Title">Équipements Thermiques (Chaud & Froid)</h3>
-          <p id="s4Text">—</p>
-        </div>
-        <div class="card">
-          <div class="icon">🪚</div>
-          <h3 id="s5Title">Menuiserie</h3>
-          <p id="s5Text">—</p>
-        </div>
-        <div class="card">
-          <div class="icon">🧱</div>
-          <h3 id="s6Title">Maçonnerie</h3>
-          <p id="s6Text">—</p>
-        </div>
-        <div class="card">
-          <div class="icon">🚨</div>
-          <h3 id="s7Title">Urgences 24/7</h3>
-          <p id="s7Text">—</p>
-        </div>
-        <div class="card">
-          <div class="icon">🛠️</div>
-          <h3 id="s8Title">Maintenance préventive</h3>
-          <p id="s8Text">—</p>
-        </div>
-      </div>
-    </section>
-  </main>
+<main>
+  <section class="hero">
+    <div>
+      <h2 id="heroTitle">Le bon professionnel, au bon endroit, au bon moment</h2>
+      <p class="lead" id="heroLead">Des interventions rapides et fiables…</p>
+      <a class="btn primary" href="contact.html" id="btnRequest">Demander un service</a>
+      <a class="btn outline" href="services.html" id="btnServices">Voir nos services</a>
+    </div>
+    <div>
+      <img src="assets/technicien.jpg" alt="Technicien Light Services">
+    </div>
+  </section>
 
-  <footer>© 2026 Light Services</footer>
-  <script src="script.js"></script>
-  <script>
-    // slogan mirrors hero title
-    document.addEventListener("DOMContentLoaded", ()=>{
-      const h = document.getElementById("heroTitle");
-      const s = document.getElementById("slogan");
-      if(h && s) s.textContent = h.textContent;
-    });
-  </script>
+  <section class="section">
+    <h2 id="servicesSectionTitle">Nos services</h2>
+    <div class="grid">
+      <div class="card"><div class="icon">🔧</div><h3 id="s1Title">Plomberie</h3><p id="s1Text">—</p></div>
+      <div class="card"><div class="icon">💡</div><h3 id="s2Title">Électricité</h3><p id="s2Text">—</p></div>
+      <div class="card"><div class="icon">🔐</div><h3 id="s3Title">Serrurerie</h3><p id="s3Text">—</p></div>
+      <div class="card"><div class="icon">🔥❄️</div><h3 id="s4Title">Équipements Thermiques (Chaud & Froid)</h3><p id="s4Text">—</p></div>
+      <div class="card"><div class="icon">🪚</div><h3 id="s5Title">Menuiserie</h3><p id="s5Text">—</p></div>
+      <div class="card"><div class="icon">🧱</div><h3 id="s6Title">Maçonnerie</h3><p id="s6Text">—</p></div>
+      <div class="card"><div class="icon">🚨</div><h3 id="s7Title">Urgences 24/7</h3><p id="s7Text">—</p></div>
+      <div class="card"><div class="icon">🛠️</div><h3 id="s8Title">Maintenance préventive</h3><p id="s8Text">—</p></div>
+    </div>
+  </section>
+</main>
+
+<footer>© 2026 Light Services</footer>
+<script src="script.js"></script>
+<script>
+  // slogan mirrors hero title
+  document.addEventListener("DOMContentLoaded", ()=>{
+    const h = document.getElementById("heroTitle");
+    const s = document.getElementById("slogan");
+    if(h && s) s.textContent = h.textContent;
+  });
+</script>
 </body>
 </html>

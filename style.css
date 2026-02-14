@@ -11,6 +11,7 @@
 body{margin:0;font-family:Arial, sans-serif;background:var(--bg);color:var(--text)}
 header{background:#fff;box-shadow:0 1px 6px rgba(2,6,23,.08);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .brand{display:flex;align-items:center;gap:12px}
+.brand a{display:inline-flex;align-items:center}
 .brand img{height:70px}
 .brand h1{font-size:18px;margin:0}
 .brand p{margin:0;color:var(--muted);font-size:13px}
@@ -34,7 +35,7 @@ main{max-width:1100px;margin:24px auto;padding:0 16px}
 footer{margin-top:34px;padding:18px;text-align:center;background:#0f172a;color:#fff}
 form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 label{font-weight:700;font-size:13px}
-input, select, textarea{padding:10px;border:1px solid #e2e8f0;border-radius:10px}
+input, select, textarea{padding:10px;border:1px solid #e2e8f0;border-radius:10px;width:100%}
 textarea{grid-column:span 2;min-height:120px}
 form .btn{grid-column:span 2;text-align:center;border:none;cursor:pointer}
 .note{color:var(--muted);font-size:13px}
@@ -48,3 +49,41 @@ form .btn{grid-column:span 2;text-align:center;border:none;cursor:pointer}
   .grid{grid-template-columns:1fr}
   .btn.outline{margin-left:0;margin-top:10px}
 }
+
+
+/* V8 PRO: location autocomplete */
+.loc-wrap{position:relative}
+.loc-suggestions{
+  position:absolute;
+  top:100%;
+  left:0;
+  right:0;
+  background:#fff;
+  border:1px solid #e2e8f0;
+  border-radius:12px;
+  margin-top:6px;
+  box-shadow:0 10px 22px rgba(2,6,23,.10);
+  max-height:220px;
+  overflow:auto;
+  z-index:50;
+}
+.loc-suggestions button{
+  width:100%;
+  text-align:left;
+  border:none;
+  background:transparent;
+  padding:10px 12px;
+  cursor:pointer;
+  font-size:14px;
+  color:var(--text);
+}
+.loc-suggestions button:hover{background:#f1f5f9}
+.loc-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.loc-actions .btn{padding:10px 14px}
+.btn.secondary{background:#fff;color:var(--blue);border:2px solid var(--blue)}
+
+
+/* V9: header band like V6 (logo clickable but same look) */
+.brand a{display:inline-flex;align-items:center;text-decoration:none}
+.brand a:visited{color:inherit}
+.brand a:focus{outline:none}

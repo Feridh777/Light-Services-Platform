@@ -7,9 +7,12 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <header>
     <div class="brand">
-      <img src="assets/logo.png" alt="Light Services">
+      <a href="index.html" aria-label="Retour à l'accueil">
+        <img src="assets/logo.png" alt="Light Services">
+      </a>
       <div>
         <h1>Light Services</h1>
         <p id="slogan">—</p>
@@ -26,28 +29,29 @@
     </nav>
   </header>
 
-  <main>
-    <h2 id="servicesPageTitle">Nos services</h2>
-    <div class="grid section">
-      <div class="card"><div class="icon">🔧</div><h3 id="s1Title">Plomberie</h3><p id="s1Text">—</p></div>
-      <div class="card"><div class="icon">💡</div><h3 id="s2Title">Électricité</h3><p id="s2Text">—</p></div>
-      <div class="card"><div class="icon">🔐</div><h3 id="s3Title">Serrurerie</h3><p id="s3Text">—</p></div>
-      <div class="card"><div class="icon">🔥❄️</div><h3 id="s4Title">Équipements Thermiques (Chaud & Froid)</h3><p id="s4Text">—</p></div>
-      <div class="card"><div class="icon">🪚</div><h3 id="s5Title">Menuiserie</h3><p id="s5Text">—</p></div>
-      <div class="card"><div class="icon">🧱</div><h3 id="s6Title">Maçonnerie</h3><p id="s6Text">—</p></div>
-      <div class="card"><div class="icon">🚨</div><h3 id="s7Title">Urgences 24/7</h3><p id="s7Text">—</p></div>
-      <div class="card"><div class="icon">🛠️</div><h3 id="s8Title">Maintenance préventive</h3><p id="s8Text">—</p></div>
-    </div>
-  </main>
 
-  <footer>© 2026 Light Services</footer>
-  <script src="script.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", ()=>{
-      const h = document.getElementById("servicesPageTitle");
-      const s = document.getElementById("slogan");
-      if(h && s) s.textContent = h.textContent;
-    });
-  </script>
+<main>
+  <h2 id="servicesPageTitle">Nos services</h2>
+  <div class="grid section">
+    <div class="card"><div class="icon">🔧</div><h3 id="s1Title">Plomberie</h3><p id="s1Text">—</p></div>
+    <div class="card"><div class="icon">💡</div><h3 id="s2Title">Électricité</h3><p id="s2Text">—</p></div>
+    <div class="card"><div class="icon">🔐</div><h3 id="s3Title">Serrurerie</h3><p id="s3Text">—</p></div>
+    <div class="card"><div class="icon">🔥❄️</div><h3 id="s4Title">Équipements Thermiques (Chaud & Froid)</h3><p id="s4Text">—</p></div>
+    <div class="card"><div class="icon">🪚</div><h3 id="s5Title">Menuiserie</h3><p id="s5Text">—</p></div>
+    <div class="card"><div class="icon">🧱</div><h3 id="s6Title">Maçonnerie</h3><p id="s6Text">—</p></div>
+    <div class="card"><div class="icon">🚨</div><h3 id="s7Title">Urgences 24/7</h3><p id="s7Text">—</p></div>
+    <div class="card"><div class="icon">🛠️</div><h3 id="s8Title">Maintenance préventive</h3><p id="s8Text">—</p></div>
+  </div>
+</main>
+
+<footer>© 2026 Light Services</footer>
+<script src="script.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", ()=>{
+    const h = document.getElementById("servicesPageTitle");
+    const s = document.getElementById("slogan");
+    if(h && s) s.textContent = h.textContent;
+  });
+</script>
 </body>
 </html>
