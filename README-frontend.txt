@@ -1,14 +1,12 @@
-# Light Services - Frontend (MVP) - V8 PRO
+# Light Services - Frontend (MVP) - V10 (Formulaire V1 figé)
 
-Basé sur V7 FULL (complet) sans suppression ni simplification.
+Cette version finalise la structure définitive du formulaire avant le backend.
 
-Ajouts V8 :
-- Logo cliquable (déjà ok)
-- Champ localisation amélioré :
-  - Suggestions (autocomplete) pendant la saisie
-  - Bouton GPS "Utiliser ma position actuelle" (remplit automatiquement)
-  - Bouton "Effacer"
-- Traduction FR/EN complète pour ces nouveaux éléments
-
-Note :
-- L'autocomplete utilise le service public Nominatim (OpenStreetMap).
+- Segments : Particulier / Commerce / Entreprise / Chantier
+- Champs obligatoires marqués (*)
+- Formulaire dynamique selon segment (champs apparaissent/disparaissent)
+- Localisation : GPS + suggestions + lat/lon
+- Heure souhaitée (datetime-local)
+- Urgence (Oui/Non)
+- Photo(s) optionnelles + aperçu (preview)
+- Traductions FR/EN

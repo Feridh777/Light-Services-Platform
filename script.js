@@ -8,7 +8,6 @@ const translations = {
     btn_request: "Demander un service",
     btn_services: "Voir nos services",
     section_services: "Nos services",
-    // services (8)
     s1_title: "Plomberie",
     s1_text: "Fuites, débouchage, installation et réparations.",
     s2_title: "Électricité",
@@ -25,27 +24,60 @@ const translations = {
     s7_text: "Interventions rapides pour pannes critiques.",
     s8_title: "Maintenance préventive",
     s8_text: "Inspections et entretien pour éviter les pannes.",
-    // contact labels
+    services_page_title: "Nos services",
+
     contact_title: "Demande de dépannage",
-    contact_name: "Nom complet",
-    contact_email: "Email",
-    contact_phone: "Téléphone",
-    contact_whatsapp: "WhatsApp",
-    contact_location: "Lien Google Maps",
-    contact_location_help: "Copiez-collez votre position (lien Google Maps)",
+    seg_title: "Segment client",
+    seg_type: "Type de client",
+    seg_hint: "Choisis le segment pour afficher les champs adaptés.",
+    ct_individual: "Particulier",
+    ct_commerce: "Commerce",
+    ct_enterprise: "Entreprise",
+    ct_project: "Chantier / Projet",
+    commerce_name: "Nom du commerce",
+    commerce_activity: "Type d’activité",
+    commerce_other: "Préciser (Autre)",
+    act_restaurant: "Restaurant",
+    act_shop: "Boutique",
+    act_hotel: "Hôtel",
+    act_market: "Supermarché",
+    act_salon: "Salon",
+    act_pharmacy: "Pharmacie",
+    act_other: "Autre",
+    enterprise_name: "Nom de l’entreprise",
+    requester_role: "Fonction du demandeur",
+    project_name: "Nom du projet",
+    site_manager: "Responsable chantier",
+    site_area: "Surface approximative",
+    project_duration: "Durée estimée",
+    client_info_title: "Informations client",
+    last_name: "Nom",
+    first_names: "Prénom(s)",
+    phone: "Téléphone",
+    whatsapp: "WhatsApp",
+    email: "Email",
+    loc_title: "Localisation",
+    loc_label: "Localisation (adresse ou repère)",
+    loc_help: "Tape un lieu pour voir des suggestions, ou utilise le GPS.",
     loc_use_gps: "📍 Utiliser ma position actuelle",
     loc_clear: "Effacer",
     loc_fetching: "Récupération de la position…",
     loc_denied: "Autorisation refusée. Active la localisation dans ton navigateur.",
-    loc_unavailable: "Position indisponible. Réessaie ou colle un lien Google Maps.",
+    loc_unavailable: "Position indisponible. Réessaie ou écris l’adresse.",
     loc_not_supported: "La géolocalisation n’est pas supportée par ce navigateur.",
-    loc_type_hint: "Commence à taper un lieu (ex: Ouagadougou, 1200 Logements…)",
-    loc_suggestion_prefix: "Suggestion",
-    contact_service: "Type de service",
-    contact_message: "Description",
+    job_title: "Détails de l’intervention",
+    service: "Type de service",
+    preferred_time: "Heure souhaitée",
+    urgency: "Urgence",
+    urgency_hint: "Choisis si l’intervention est urgente.",
+    urgent_yes: "Oui",
+    urgent_no: "Non",
+    description: "Description",
+    photos: "Photo(s)",
+    photos_hint: "Ajoute 1 à 3 photos si possible (ça aide le technicien).",
+    required_note: "Champs obligatoires",
     contact_submit: "Envoyer la demande",
-    back_home: "Retour à l'accueil",
-    services_page_title: "Nos services"
+    back_home: "Retour à l'accueil"
   },
   en: {
     nav_home: "Home",
@@ -56,7 +88,6 @@ const translations = {
     btn_request: "Request a service",
     btn_services: "See services",
     section_services: "Our services",
-    // services (8)
     s1_title: "Plumbing",
     s1_text: "Leaks, unblocking, installation and repairs.",
     s2_title: "Electricity",
@@ -73,29 +104,64 @@ const translations = {
     s7_text: "Fast response for critical issues.",
     s8_title: "Preventive maintenance",
     s8_text: "Inspections and upkeep to avoid breakdowns.",
-    // contact labels
+    services_page_title: "Our services",
+
     contact_title: "Service request",
-    contact_name: "Full name",
-    contact_email: "Email",
-    contact_phone: "Phone number",
-    contact_whatsapp: "WhatsApp",
-    contact_location: "Google Maps link",
-    contact_location_help: "Paste your location (Google Maps link)",
+    seg_title: "Customer segment",
+    seg_type: "Customer type",
+    seg_hint: "Choose a segment to display the right fields.",
+    ct_individual: "Individual",
+    ct_commerce: "Commerce",
+    ct_enterprise: "Company",
+    ct_project: "Project / Site",
+    commerce_name: "Business name",
+    commerce_activity: "Activity type",
+    commerce_other: "Specify (Other)",
+    act_restaurant: "Restaurant",
+    act_shop: "Shop",
+    act_hotel: "Hotel",
+    act_market: "Supermarket",
+    act_salon: "Salon",
+    act_pharmacy: "Pharmacy",
+    act_other: "Other",
+    enterprise_name: "Company name",
+    requester_role: "Requester role",
+    project_name: "Project name",
+    site_manager: "Site manager",
+    site_area: "Approx. area",
+    project_duration: "Estimated duration",
+    client_info_title: "Customer info",
+    last_name: "Last name",
+    first_names: "First name(s)",
+    phone: "Phone",
+    whatsapp: "WhatsApp",
+    email: "Email",
+    loc_title: "Location",
+    loc_label: "Location (address or landmark)",
+    loc_help: "Start typing to see suggestions, or use GPS.",
     loc_use_gps: "📍 Use my current location",
     loc_clear: "Clear",
     loc_fetching: "Fetching location…",
     loc_denied: "Permission denied. Enable location in your browser.",
-    loc_unavailable: "Location unavailable. Try again or paste a Google Maps link.",
+    loc_unavailable: "Location unavailable. Try again or type the address.",
     loc_not_supported: "Geolocation is not supported by this browser.",
-    loc_type_hint: "Start typing a place (e.g., Ouagadougou, 1200 Logements…)",
-    loc_suggestion_prefix: "Suggestion",
-    contact_service: "Service type",
-    contact_message: "Description",
+    job_title: "Intervention details",
+    service: "Service type",
+    preferred_time: "Preferred time",
+    urgency: "Urgent",
+    urgency_hint: "Select whether this request is urgent.",
+    urgent_yes: "Yes",
+    urgent_no: "No",
+    description: "Description",
+    photos: "Photo(s)",
+    photos_hint: "Add 1–3 photos if possible (helps the technician).",
+    required_note: "Required fields",
     contact_submit: "Send request",
-    back_home: "Back to home",
-    services_page_title: "Our services"
+    back_home: "Back to home"
   }
 };
+
+
 
 function setText(id, value){
   const el = document.getElementById(id);
@@ -289,5 +355,315 @@ function setupLocationUX(){
 }
 
 document.addEventListener("DOMContentLoaded", ()=>{
+  setupLocationUX();
+});
+
+
+function setText(id, value){
+  const el = document.getElementById(id);
+  if(el) el.textContent = value;
+}
+
+function setLanguage(lang){
+  const t = translations[lang] || translations.fr;
+
+  setText("navHome", t.nav_home);
+  setText("navServices", t.nav_services);
+  setText("navContact", t.nav_contact);
+
+  setText("heroTitle", t.hero_title);
+  setText("heroLead", t.hero_lead);
+  setText("btnRequest", t.btn_request);
+  setText("btnServices", t.btn_services);
+
+  setText("servicesSectionTitle", t.section_services);
+  for(let i=1;i<=8;i++){
+    setText(`s${i}Title`, t[`s${i}_title`]);
+    setText(`s${i}Text`, t[`s${i}_text`]);
+  }
+  setText("servicesPageTitle", t.services_page_title);
+
+  setText("contactTitle", t.contact_title);
+  setText("segTitle", t.seg_title);
+  setText("labelClientType", t.seg_type);
+  setText("segHint", t.seg_hint);
+  setText("ctIndividual", t.ct_individual);
+  setText("ctCommerce", t.ct_commerce);
+  setText("ctEnterprise", t.ct_enterprise);
+  setText("ctProject", t.ct_project);
+
+  setText("labelBusinessNameCommerce", t.commerce_name);
+  setText("labelActivityType", t.commerce_activity);
+  setText("labelActivityOther", t.commerce_other);
+  setText("actRestaurant", t.act_restaurant);
+  setText("actShop", t.act_shop);
+  setText("actHotel", t.act_hotel);
+  setText("actMarket", t.act_market);
+  setText("actSalon", t.act_salon);
+  setText("actPharmacy", t.act_pharmacy);
+  setText("actOther", t.act_other);
+
+  setText("labelBusinessNameEnterprise", t.enterprise_name);
+  setText("labelRequesterRole", t.requester_role);
+
+  setText("labelProjectName", t.project_name);
+  setText("labelSiteManager", t.site_manager);
+  setText("labelSiteArea", t.site_area);
+  setText("labelProjectDuration", t.project_duration);
+
+  setText("clientInfoTitle", t.client_info_title);
+  setText("labelLastName", t.last_name);
+  setText("labelFirstNames", t.first_names);
+  setText("labelPhone", t.phone);
+  setText("labelWhatsapp", t.whatsapp);
+  setText("labelEmail", t.email);
+
+  setText("locTitle", t.loc_title);
+  setText("labelLocation", t.loc_label);
+  setText("locationHelp", t.loc_help);
+
+  const gpsBtn = document.getElementById("useGpsBtn");
+  if(gpsBtn) gpsBtn.textContent = t.loc_use_gps;
+  const clearBtn = document.getElementById("clearLocBtn");
+  if(clearBtn) clearBtn.textContent = t.loc_clear;
+
+  setText("jobTitle", t.job_title);
+  setText("labelService", t.service);
+  setText("labelPreferredTime", t.preferred_time);
+  setText("labelUrgency", t.urgency);
+  setText("urgencyHint", t.urgency_hint);
+  setText("urgentYes", t.urgent_yes);
+  setText("urgentNo", t.urgent_no);
+  setText("labelMessage", t.description);
+  setText("labelPhotos", t.photos);
+  setText("photosHint", t.photos_hint);
+  setText("requiredNote", t.required_note);
+
+  const submit = document.getElementById("contactSubmit");
+  if(submit) submit.textContent = t.contact_submit;
+  setText("backHome", t.back_home);
+
+  localStorage.setItem("ls_lang", lang);
+}
+
+function initLanguage(){
+  const saved = localStorage.getItem("ls_lang") || "fr";
+  const select = document.querySelector(".langSwitcher");
+  if(select){
+    select.value = saved;
+    select.addEventListener("change", ()=> setLanguage(select.value));
+  }
+  setLanguage(saved);
+}
+
+
+// V10: dynamic segments + photo preview + gps lat/lon + autocomplete
+function setRequired(el, required){
+  if(!el) return;
+  el.required = !!required;
+  if(!required) el.value = "";
+}
+
+function updateSegmentBlocks(){
+  const sel = document.getElementById("clientType");
+  const type = sel ? sel.value : "";
+  const bC = document.getElementById("blockCommerce");
+  const bE = document.getElementById("blockEnterprise");
+  const bP = document.getElementById("blockProject");
+  const otherWrap = document.getElementById("activityOtherWrap");
+
+  const commerceName = document.getElementById("businessNameCommerce");
+  const enterpriseName = document.getElementById("businessNameEnterprise");
+  const activityType = document.getElementById("activityType");
+  const activityOther = document.getElementById("activityOther");
+  const projectName = document.getElementById("projectName");
+  const siteManager = document.getElementById("siteManager");
+
+  [bC,bE,bP].forEach(b=> b && b.classList.add("hidden"));
+  if(otherWrap) otherWrap.classList.add("hidden");
+
+  setRequired(commerceName, false);
+  setRequired(enterpriseName, false);
+  setRequired(activityType, false);
+  setRequired(activityOther, false);
+  setRequired(projectName, false);
+  setRequired(siteManager, false);
+
+  if(type === "COMMERCE"){
+    if(bC) bC.classList.remove("hidden");
+    setRequired(commerceName, true);
+    setRequired(activityType, true);
+    if(activityType && activityType.value === "AUTRE"){
+      if(otherWrap) otherWrap.classList.remove("hidden");
+      setRequired(activityOther, true);
+    }
+  }else if(type === "ENTREPRISE"){
+    if(bE) bE.classList.remove("hidden");
+    setRequired(enterpriseName, true);
+  }else if(type === "CHANTIER"){
+    if(bP) bP.classList.remove("hidden");
+    setRequired(projectName, true);
+    setRequired(siteManager, true);
+  }
+}
+
+function setupSegmentUX(){
+  const sel = document.getElementById("clientType");
+  const activity = document.getElementById("activityType");
+  if(sel){
+    sel.addEventListener("change", updateSegmentBlocks);
+    updateSegmentBlocks();
+  }
+  if(activity){
+    activity.addEventListener("change", updateSegmentBlocks);
+  }
+}
+
+function setupPhotoPreview(){
+  const input = document.getElementById("photos");
+  const wrap = document.getElementById("photoPreview");
+  if(!input || !wrap) return;
+  input.addEventListener("change", ()=>{
+    wrap.innerHTML = "";
+    const files = Array.from(input.files || []).slice(0,3);
+    files.forEach((file)=>{
+      if(!file.type.startsWith("image/")) return;
+      const img = document.createElement("img");
+      img.alt = "photo";
+      wrap.appendChild(img);
+      const reader = new FileReader();
+      reader.onload = (e)=>{ img.src = e.target.result; };
+      reader.readAsDataURL(file);
+    });
+  });
+}
+
+// Autocomplete (Nominatim)
+function debounce(fn, delay){
+  let t;
+  return (...args)=>{ clearTimeout(t); t = setTimeout(()=>fn(...args), delay); };
+}
+
+async function nominatimSearch(q){
+  const url = `https://nominatim.openstreetmap.org/search?format=jsonv2&limit=6&q=${encodeURIComponent(q)}`;
+  const res = await fetch(url, {headers: {"Accept":"application/json"}});
+  if(!res.ok) return [];
+  return await res.json();
+}
+
+async function nominatimReverse(lat, lon){
+  const url = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${encodeURIComponent(lat)}&lon=${encodeURIComponent(lon)}`;
+  const res = await fetch(url, {headers: {"Accept":"application/json"}});
+  if(!res.ok) return null;
+  return await res.json();
+}
+
+function showSuggestions(items){
+  const box = document.getElementById("locSuggestions");
+  if(!box) return;
+  box.innerHTML = "";
+  if(!items || items.length === 0){
+    box.style.display = "none";
+    return;
+  }
+  items.forEach((it)=>{
+    const b = document.createElement("button");
+    b.type = "button";
+    b.textContent = it.display_name || "";
+    b.addEventListener("click", ()=>{
+      const input = document.getElementById("location");
+      if(input) input.value = b.textContent;
+      box.style.display = "none";
+      box.innerHTML = "";
+    });
+    box.appendChild(b);
+  });
+  box.style.display = "block";
+}
+
+function hideSuggestions(){
+  const box = document.getElementById("locSuggestions");
+  if(!box) return;
+  box.style.display = "none";
+  box.innerHTML = "";
+}
+
+function setupLocationUX(){
+  const input = document.getElementById("location");
+  const gpsBtn = document.getElementById("useGpsBtn");
+  const clearBtn = document.getElementById("clearLocBtn");
+  const latEl = document.getElementById("latitude");
+  const lonEl = document.getElementById("longitude");
+
+  if(clearBtn){
+    clearBtn.addEventListener("click", ()=>{
+      if(input) input.value = "";
+      if(latEl) latEl.value = "";
+      if(lonEl) lonEl.value = "";
+      hideSuggestions();
+    });
+  }
+
+  if(input){
+    const doSearch = debounce(async ()=>{
+      const q = input.value.trim();
+      if(q.length < 3){ hideSuggestions(); return; }
+      try{
+        const items = await nominatimSearch(q);
+        showSuggestions(items);
+      }catch(e){
+        hideSuggestions();
+      }
+    }, 300);
+
+    input.addEventListener("input", doSearch);
+    input.addEventListener("focus", doSearch);
+    input.addEventListener("blur", ()=> setTimeout(hideSuggestions, 180));
+  }
+
+  if(gpsBtn){
+    gpsBtn.addEventListener("click", async ()=>{
+      const lang = localStorage.getItem("ls_lang") || "fr";
+      const t = translations[lang] || translations.fr;
+
+      if(!navigator.geolocation){
+        alert(t.loc_not_supported);
+        return;
+      }
+
+      const oldText = gpsBtn.textContent;
+      gpsBtn.disabled = true;
+      gpsBtn.textContent = t.loc_fetching;
+
+      navigator.geolocation.getCurrentPosition(async (pos)=>{
+        try{
+          const lat = pos.coords.latitude;
+          const lon = pos.coords.longitude;
+          if(latEl) latEl.value = String(lat);
+          if(lonEl) lonEl.value = String(lon);
+
+          const rev = await nominatimReverse(lat, lon);
+          const best = rev?.display_name ? rev.display_name : `${lat.toFixed(6)}, ${lon.toFixed(6)}`;
+          if(input) input.value = best;
+        }catch(e){
+          // fallback
+        }finally{
+          gpsBtn.disabled = false;
+          gpsBtn.textContent = oldText;
+        }
+      }, (err)=>{
+        gpsBtn.disabled = false;
+        gpsBtn.textContent = oldText;
+        if(err && err.code === 1) alert(t.loc_denied);
+        else alert(t.loc_unavailable);
+      }, {enableHighAccuracy:true, timeout:10000, maximumAge:0});
+    });
+  }
+}
+
+document.addEventListener("DOMContentLoaded", ()=>{
+  initLanguage();
+  setupSegmentUX();
+  setupPhotoPreview();
   setupLocationUX();
 });

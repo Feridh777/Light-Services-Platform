@@ -33,58 +33,180 @@
 <main>
   <h2 id="contactTitle">Demande de dépannage</h2>
 
-  <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-    <div>
-      <label for="name" id="labelName">Nom complet</label><br>
-      <input id="name" name="name" type="text" required>
-    </div>
-    <div>
-      <label for="email" id="labelEmail">Email</label><br>
-      <input id="email" name="email" type="email" required>
-    </div>
-    <div>
-      <label for="phone" id="labelPhone">Téléphone</label><br>
-      <input id="phone" name="phone" type="tel" required>
-    </div>
-    <div>
-      <label for="whatsapp" id="labelWhatsapp">WhatsApp</label><br>
-      <input id="whatsapp" name="whatsapp" type="tel" required>
+  <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" enctype="multipart/form-data">
+
+  <div class="fieldset">
+    <h3 id="segTitle">Segment client <span class="req">*</span></h3>
+    <div class="row">
+      <div>
+        <label for="clientType" id="labelClientType">Type de client</label><br>
+        <select id="clientType" name="clientType" required>
+          <option value="" disabled selected>—</option>
+          <option value="PARTICULIER" id="ctIndividual">Particulier</option>
+          <option value="COMMERCE" id="ctCommerce">Commerce</option>
+          <option value="ENTREPRISE" id="ctEnterprise">Entreprise</option>
+          <option value="CHANTIER" id="ctProject">Chantier / Projet</option>
+        </select>
+        <div class="form-hint" id="segHint">Choisis le segment pour afficher les champs adaptés.</div>
+      </div>
     </div>
 
-    
-<div style="grid-column:span 2" class="loc-wrap">
-  <label for="location" id="labelLocation">Lien Google Maps</label><br>
-  <input id="location" name="location" type="text" placeholder="https://maps.google.com/..." autocomplete="off" required>
-  <div id="locSuggestions" class="loc-suggestions" style="display:none"></div>
-  <div class="note" id="locationHelp">Copiez-collez votre position (lien Google Maps)</div>
-  <div class="loc-actions">
-    <button type="button" class="btn secondary" id="useGpsBtn">📍 Utiliser ma position actuelle</button>
-    <button type="button" class="btn outline" id="clearLocBtn">Effacer</button>
+    <div id="blockCommerce" class="row hidden">
+      <div>
+        <label for="businessNameCommerce" id="labelBusinessNameCommerce">Nom du commerce<span class="req">*</span></label><br>
+        <input id="businessNameCommerce" name="businessNameCommerce" type="text">
+      </div>
+      <div>
+        <label for="activityType" id="labelActivityType">Type d’activité<span class="req">*</span></label><br>
+        <select id="activityType" name="activityType">
+          <option value="" disabled selected>—</option>
+          <option value="RESTAURANT" id="actRestaurant">Restaurant</option>
+          <option value="BOUTIQUE" id="actShop">Boutique</option>
+          <option value="HOTEL" id="actHotel">Hôtel</option>
+          <option value="SUPERMARCHE" id="actMarket">Supermarché</option>
+          <option value="SALON" id="actSalon">Salon</option>
+          <option value="PHARMACIE" id="actPharmacy">Pharmacie</option>
+          <option value="AUTRE" id="actOther">Autre</option>
+        </select>
+      </div>
+      <div id="activityOtherWrap" class="hidden" style="grid-column:span 2">
+        <label for="activityOther" id="labelActivityOther">Préciser (Autre)<span class="req">*</span></label><br>
+        <input id="activityOther" name="activityOther" type="text">
+      </div>
+    </div>
+
+    <div id="blockEnterprise" class="row hidden">
+      <div>
+        <label for="businessNameEnterprise" id="labelBusinessNameEnterprise">Nom de l’entreprise<span class="req">*</span></label><br>
+        <input id="businessNameEnterprise" name="businessNameEnterprise" type="text">
+      </div>
+      <div>
+        <label for="requesterRole" id="labelRequesterRole">Fonction du demandeur <span class="opt">(optionnel)</span></label><br>
+        <input id="requesterRole" name="requesterRole" type="text">
+      </div>
+    </div>
+
+    <div id="blockProject" class="row hidden">
+      <div>
+        <label for="projectName" id="labelProjectName">Nom du projet<span class="req">*</span></label><br>
+        <input id="projectName" name="projectName" type="text">
+      </div>
+      <div>
+        <label for="siteManager" id="labelSiteManager">Responsable chantier<span class="req">*</span></label><br>
+        <input id="siteManager" name="siteManager" type="text">
+      </div>
+      <div>
+        <label for="siteArea" id="labelSiteArea">Surface approximative <span class="opt">(optionnel)</span></label><br>
+        <input id="siteArea" name="siteArea" type="text" placeholder="ex: 200 m²">
+      </div>
+      <div>
+        <label for="projectDuration" id="labelProjectDuration">Durée estimée <span class="opt">(optionnel)</span></label><br>
+        <input id="projectDuration" name="projectDuration" type="text" placeholder="ex: 2 semaines">
+      </div>
+    </div>
   </div>
-</div>
 
+  <div class="fieldset">
+    <h3 id="clientInfoTitle">Informations client</h3>
+    <div class="row">
+      <div>
+        <label for="lastName" id="labelLastName">Nom<span class="req">*</span></label><br>
+        <input id="lastName" name="lastName" type="text" required>
+      </div>
+      <div>
+        <label for="firstNames" id="labelFirstNames">Prénom(s)<span class="req">*</span></label><br>
+        <input id="firstNames" name="firstNames" type="text" required>
+      </div>
+      <div>
+        <label for="phone" id="labelPhone">Téléphone<span class="req">*</span></label><br>
+        <input id="phone" name="phone" type="tel" required>
+      </div>
+      <div>
+        <label for="whatsapp" id="labelWhatsapp">WhatsApp <span class="opt">(optionnel)</span></label><br>
+        <input id="whatsapp" name="whatsapp" type="tel">
+      </div>
+      <div style="grid-column:span 2">
+        <label for="email" id="labelEmail">Email <span class="opt">(optionnel)</span></label><br>
+        <input id="email" name="email" type="email">
+      </div>
+    </div>
+  </div>
 
-    <div>
-      <label for="service" id="labelService">Type de service</label><br>
-      <select id="service" name="service">
-        <option value="plomberie">Plomberie</option>
-        <option value="electricite">Électricité</option>
-        <option value="serrurerie">Serrurerie</option>
-        <option value="thermique">Équipements Thermiques (Chaud & Froid)</option>
-        <option value="menuiserie">Menuiserie</option>
-        <option value="maconnerie">Maçonnerie</option>
-        <option value="urgence">Urgences 24/7</option>
-        <option value="maintenance">Maintenance préventive</option>
-      </select>
+  <div class="fieldset">
+    <h3 id="locTitle">Localisation <span class="req">*</span></h3>
+
+    <div class="loc-wrap">
+      <label for="location" id="labelLocation">Localisation (adresse ou repère)</label><br>
+      <input id="location" name="location" type="text" autocomplete="off" required>
+      <div id="locSuggestions" class="loc-suggestions" style="display:none"></div>
+      <div class="form-hint" id="locationHelp">Tape un lieu pour voir des suggestions, ou utilise le GPS.</div>
+      <div class="loc-actions">
+        <button type="button" class="btn secondary" id="useGpsBtn">📍 Utiliser ma position actuelle</button>
+        <button type="button" class="btn outline" id="clearLocBtn">Effacer</button>
+      </div>
     </div>
 
-    <div style="grid-column:span 2">
-      <label for="message" id="labelMessage">Description</label><br>
-      <textarea id="message" name="message" required></textarea>
+    <input type="hidden" id="latitude" name="latitude">
+    <input type="hidden" id="longitude" name="longitude">
+  </div>
+
+  <div class="fieldset">
+    <h3 id="jobTitle">Détails de l’intervention</h3>
+    <div class="row">
+      <div>
+        <label for="service" id="labelService">Type de service<span class="req">*</span></label><br>
+        <select id="service" name="service" required>
+          <option value="plomberie">Plomberie</option>
+          <option value="electricite">Électricité</option>
+          <option value="serrurerie">Serrurerie</option>
+          <option value="thermique">Équipements Thermiques (Chaud & Froid)</option>
+          <option value="menuiserie">Menuiserie</option>
+          <option value="maconnerie">Maçonnerie</option>
+          <option value="urgence">Urgences 24/7</option>
+          <option value="maintenance">Maintenance préventive</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="preferredTime" id="labelPreferredTime">Heure souhaitée<span class="req">*</span></label><br>
+        <input id="preferredTime" name="preferredTime" type="datetime-local" required>
+      </div>
+
+      <div class="toggle" style="grid-column:span 2">
+        <div>
+          <label id="labelUrgency">Urgence<span class="req">*</span></label>
+          <div class="form-hint" id="urgencyHint">Choisis si l’intervention est urgente.</div>
+        </div>
+        <div>
+          <label>
+            <input type="radio" name="urgent" value="YES" required>
+            <span id="urgentYes">Oui</span>
+          </label>
+          <label style="margin-left:14px">
+            <input type="radio" name="urgent" value="NO" required>
+            <span id="urgentNo">Non</span>
+          </label>
+        </div>
+      </div>
+
+      <div style="grid-column:span 2">
+        <label for="message" id="labelMessage">Description<span class="req">*</span></label><br>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+
+      <div style="grid-column:span 2">
+        <label for="photos" id="labelPhotos">Photo(s) <span class="opt">(optionnel)</span></label><br>
+        <input id="photos" name="photos" type="file" accept="image/*" multiple>
+        <div class="form-hint" id="photosHint">Ajoute 1 à 3 photos si possible (ça aide le technicien).</div>
+        <div id="photoPreview" class="photo-preview"></div>
+      </div>
     </div>
 
+    <div class="form-hint"><span class="req">*</span> <span id="requiredNote">Champs obligatoires</span></div>
     <button class="btn primary" id="contactSubmit" type="submit">Envoyer la demande</button>
-  </form>
+  </div>
+
+</form>
 
   <p class="note">
     Remplace <b>YOUR_FORM_ID</b> par ton identifiant Formspree quand tu seras prêt.

@@ -87,3 +87,17 @@ form .btn{grid-column:span 2;text-align:center;border:none;cursor:pointer}
 .brand a{display:inline-flex;align-items:center;text-decoration:none}
 .brand a:visited{color:inherit}
 .brand a:focus{outline:none}
+
+
+/* V10: form UX (required/optional + dynamic fields + photo preview) */
+.req{color:#dc2626;font-weight:800;margin-left:4px}
+.opt{color:var(--muted);font-weight:600;margin-left:6px;font-size:12px}
+.form-hint{color:var(--muted);font-size:13px;margin:6px 0 0}
+.fieldset{background:var(--card);border-radius:14px;padding:14px;box-shadow:0 6px 18px rgba(2,6,23,.06);margin-top:14px}
+.fieldset h3{margin:0 0 10px;font-size:16px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:900px){.row{grid-template-columns:1fr}}
+.toggle{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.photo-preview{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.photo-preview img{width:90px;height:90px;object-fit:cover;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,.12)}
+.hidden{display:none !important}
