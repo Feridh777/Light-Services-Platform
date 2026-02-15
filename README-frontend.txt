@@ -10,3 +10,9 @@ Cette version finalise la structure définitive du formulaire avant le backend.
 - Urgence (Oui/Non)
 - Photo(s) optionnelles + aperçu (preview)
 - Traductions FR/EN
+
+
+V11:
+- Correction affichage des étoiles rouges (*) champs obligatoires
+- Alignement propre du bloc Urgence (Oui/Non)
+- CSS nettoyé et consolidé
