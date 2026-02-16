@@ -15,3 +15,7 @@ V12:
 - Restaure le design V10/V9 (services visibles sur accueil)
 - Correction définitive des étoiles rouges (JS ne supprime plus les <span class='req'>)
 - Alignement Urgence (Oui/Non) amélioré
+
+V13:
+- Description rendue optionnelle
+- Urgence Oui/Non alignée et plus harmonieuse

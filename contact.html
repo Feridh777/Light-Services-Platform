@@ -177,12 +177,12 @@
           <label id="labelUrgency">Urgence<span class="req">*</span></label>
           <div class="form-hint" id="urgencyHint">Choisis si l’intervention est urgente.</div>
         </div>
-        <div>
+        <div class="radio-group">
           <label>
             <input type="radio" name="urgent" value="YES" required>
             <span id="urgentYes">Oui</span>
           </label>
-          <label style="margin-left:14px">
+          <label>
             <input type="radio" name="urgent" value="NO" required>
             <span id="urgentNo">Non</span>
           </label>
@@ -190,8 +190,8 @@
       </div>
 
       <div style="grid-column:span 2">
-        <label for="message" id="labelMessage">Description<span class="req">*</span></label><br>
-        <textarea id="message" name="message" required></textarea>
+        <label for="message" id="labelMessage">Description <span class="opt">(optionnel)</span></label><br>
+        <textarea id="message" name="message"></textarea>
       </div>
 
       <div style="grid-column:span 2">
