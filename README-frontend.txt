@@ -38,3 +38,6 @@ V18:
 
 V19:
 - Page accueil: ajout liste résumée des dépannages par service avec 'etc.' (sans modifier le reste)
+
+V20:
+- Fix page Services: initialisation systématique des sous-listes + toggle au clic (JS)
