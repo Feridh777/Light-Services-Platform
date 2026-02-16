@@ -23,3 +23,7 @@ V13:
 V15:
 - Phrase d'accueil mise à jour (etc.) FR/EN
 - Détails par service (clic sur carte) avec listes de réparations
+
+V16:
+- Détails des sous-services visibles au clic sur chaque service (Accueil + Services)
+- Résumés des services restaurés sur la page d'accueil (FR/EN)

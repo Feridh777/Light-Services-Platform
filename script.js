@@ -244,6 +244,8 @@ function setLanguage(lang){
   const submit = document.getElementById("contactSubmit");
   if(submit) submit.textContent = t.contact_submit;
   setText("backHome", t.back_home);
+  populateServiceDetails(t);
+  setupServiceToggles(t);
 
   // placeholders
   const name = document.getElementById("name"); if(name) name.placeholder = t.contact_name;
