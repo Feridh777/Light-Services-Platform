@@ -143,3 +143,16 @@ form .btn{grid-column:span 2;text-align:center;border:none;cursor:pointer}
 .serviceCard.open{
   outline: 2px solid rgba(14,165,233,.25);
 }
+
+
+/* V17: service details toggle */
+.serviceDetails{display:none;margin-top:10px;padding-top:10px;border-top:1px solid #e2e8f0}
+.card.open .serviceDetails{display:block}
+.subservices{margin-left:18px;margin-top:6px}
+.subservices li{margin:4px 0;color:#334155}
+.serviceHint{margin-top:8px;color:#64748b;font-size:13px}
+.card.serviceCard{cursor:pointer}
+
+
+/* V18: no hint text on home/services */
+.serviceHint{display:none !important}

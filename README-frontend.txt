@@ -27,3 +27,11 @@ V15:
 V16:
 - Détails des sous-services visibles au clic sur chaque service (Accueil + Services)
 - Résumés des services restaurés sur la page d'accueil (FR/EN)
+
+V17:
+- Fix résumés services (clés de traduction s1Text..s8Text)
+- Fix affichage détails au clic (CSS toggle)
+
+V18:
+- Accueil: suppression du texte 'Cliquer pour voir les détails' (retour style V13)
+- Page Services: détails (liste de dépannages) affichés au clic pour chaque service
