@@ -115,3 +115,31 @@ form .btn{grid-column:span 2;text-align:center;border:none;cursor:pointer}
 .radio-group input{transform:translateY(1px)}
 .toggle{align-items:flex-start !important}
 .toggle > div:first-child{min-width:220px}
+
+
+/* V15: Service details (accordion) */
+.serviceCard{cursor:pointer; position:relative}
+.serviceHint{
+  margin-top:10px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.serviceDetails{
+  margin-top:12px;
+  padding-top:12px;
+  border-top:1px dashed #e2e8f0;
+  display:none;
+}
+.serviceCard.open .serviceDetails{display:block}
+.subservices{
+  margin:0;
+  padding-left:18px;
+}
+.subservices li{
+  margin:6px 0;
+  color: var(--text);
+  opacity: .92;
+}
+.serviceCard.open{
+  outline: 2px solid rgba(14,165,233,.25);
+}

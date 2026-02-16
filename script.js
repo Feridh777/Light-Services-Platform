@@ -4,7 +4,7 @@ const translations = {
     nav_services: "Nos services",
     nav_contact: "Contact",
     hero_title: "Le bon professionnel, au bon endroit, au bon moment",
-    hero_lead: "Des interventions rapides et fiables pour maisons, bureaux, restaurants et commerces, etc.",
+    hero_lead: "Des interventions rapides et fiables pour maisons, bureaux, restaurants, commerces, etc.",
     btn_request: "Demander un service",
     btn_services: "Voir nos services",
     section_services: "Nos services",
@@ -24,6 +24,16 @@ const translations = {
     s7_text: "Interventions rapides pour pannes critiques.",
     s8_title: "Maintenance préventive",
     s8_text: "Inspections et entretien pour éviter les pannes.",
+    s1_items: ["Fuites & tuyauterie", "Robinetterie", "WC & chasse d’eau", "Évier & lavabo", "Débouchage"],
+    s2_items: ["Prises & interrupteurs", "Tableau / disjoncteur", "Éclairage", "Court-circuit", "Installation d’appareils"],
+    s3_items: ["Ouverture de porte", "Changement de serrure", "Clés perdues", "Renforcement sécurité", "Rideaux métalliques"],
+    s4_items: ["Climatisation", "Réfrigérateur / congélateur", "Cuisinière / gazinière", "Ventilateur", "Chauffe-eau"],
+    s5_items: ["Portes & fenêtres", "Meubles & réparation", "Placards / étagères", "Pose de serrures bois", "Ajustements"],
+    s6_items: ["Murs & cloisons", "Carrelage", "Enduit & réparation", "Petite maçonnerie", "Fissures"],
+    s7_items: ["Dépannage express", "Fuite importante", "Panne électrique", "Porte bloquée", "Intervention 24/7"],
+    s8_items: ["Inspection", "Entretien périodique", "Prévention pannes", "Rapport de contrôle", "Plan de maintenance"],
+    service_hint: "Cliquer pour voir les d\u00e9tails",
+    service_hide: "Masquer les d\u00e9tails",
     services_page_title: "Nos services",
 
     contact_title: "Demande de dépannage",
@@ -84,7 +94,7 @@ const translations = {
     nav_services: "Services",
     nav_contact: "Contact",
     hero_title: "The right professional, at the right place, at the right time",
-    hero_leFast, reliable interventions for homes, offices, restaurants and businesses, etc.sses.",
+    hero_leadFast, reliable interventions for homes, offices, restaurants, businesses, etc.es.",
     btn_request: "Request a service",
     btn_services: "See services",
     section_services: "Our services",
@@ -104,6 +114,16 @@ const translations = {
     s7_text: "Fast response for critical issues.",
     s8_title: "Preventive maintenance",
     s8_text: "Inspections and upkeep to avoid breakdowns.",
+    s1_items: ["Leaks & piping", "Faucets", "Toilets", "Sinks", "Unclogging"],
+    s2_items: ["Outlets & switches", "Breaker panel", "Lighting", "Short circuits", "Appliance setup"],
+    s3_items: ["Door opening", "Lock replacement", "Lost keys", "Security upgrade", "Metal shutters"],
+    s4_items: ["Air conditioning", "Fridge / freezer", "Gas cooker", "Fan", "Water heater"],
+    s5_items: ["Doors & windows", "Furniture repair", "Closets / shelves", "Wood lock fitting", "Adjustments"],
+    s6_items: ["Walls & partitions", "Tiling", "Plaster repair", "Small masonry", "Cracks"],
+    s7_items: ["Fast troubleshooting", "Major leak", "Power outage", "Locked door", "24/7 intervention"],
+    s8_items: ["Inspection", "Regular servicing", "Failure prevention", "Check report", "Maintenance plan"],
+    service_hint: "Click to see details",
+    service_hide: "Hide details",
     services_page_title: "Our services",
 
     contact_title: "Service request",
@@ -234,6 +254,51 @@ function setLanguage(lang){
   const msg = document.getElementById("message"); if(msg) msg.placeholder = t.contact_message;
 
   localStorage.setItem("ls_lang", lang);
+}
+
+
+function populateServiceDetails(t){
+  const services = ["s1","s2","s3","s4","s5","s6","s7","s8"];
+  services.forEach(sid=>{
+    const ul = document.getElementById(sid+"List");
+    const hint = document.getElementById(sid+"Hint");
+    if(ul && t[sid+"_items"]){
+      ul.innerHTML = "";
+      t[sid+"_items"].forEach(item=>{
+        const li=document.createElement("li");
+        li.textContent=item;
+        ul.appendChild(li);
+      });
+    }
+    if(hint){
+      hint.textContent = t.service_hint || hint.textContent;
+    }
+  });
+}
+
+function setupServiceToggles(t){
+  const cards = document.querySelectorAll(".serviceCard");
+  if(!cards || !cards.length) return;
+
+  const toggleCard = (card)=>{
+    const open = card.classList.toggle("open");
+    const sid = card.dataset.service;
+    const details = document.getElementById(sid+"Details");
+    const hint = document.getElementById(sid+"Hint");
+    card.setAttribute("aria-expanded", open ? "true" : "false");
+    if(details) details.setAttribute("aria-hidden", open ? "false" : "true");
+    if(hint) hint.textContent = open ? (t.service_hide || "Masquer les détails") : (t.service_hint || "Cliquer pour voir les détails");
+  };
+
+  cards.forEach(card=>{
+    card.addEventListener("click", ()=>toggleCard(card));
+    card.addEventListener("keydown", (e)=>{
+      if(e.key==="Enter" || e.key===" "){
+        e.preventDefault();
+        toggleCard(card);
+      }
+    });
+  });
 }
 
 document.addEventListener("DOMContentLoaded", ()=>{

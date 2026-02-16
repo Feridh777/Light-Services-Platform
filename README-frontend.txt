@@ -20,5 +20,6 @@ V13:
 - Description rendue optionnelle
 - Urgence Oui/Non alignée et plus harmonieuse
 
-V14:
-- Texte hero (accueil) mis à jour avec 'etc.' en FR/EN (HTML + traductions JS)
+V15:
+- Phrase d'accueil mise à jour (etc.) FR/EN
+- Détails par service (clic sur carte) avec listes de réparations
