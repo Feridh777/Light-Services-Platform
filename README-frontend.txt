@@ -11,8 +11,7 @@ Cette version finalise la structure définitive du formulaire avant le backend.
 - Photo(s) optionnelles + aperçu (preview)
 - Traductions FR/EN
 
-
-V11:
-- Correction affichage des étoiles rouges (*) champs obligatoires
-- Alignement propre du bloc Urgence (Oui/Non)
-- CSS nettoyé et consolidé
+V12:
+- Restaure le design V10/V9 (services visibles sur accueil)
+- Correction définitive des étoiles rouges (JS ne supprime plus les <span class='req'>)
+- Alignement Urgence (Oui/Non) amélioré

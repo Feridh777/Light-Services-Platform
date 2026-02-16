@@ -168,6 +168,19 @@ function setText(id, value){
   if(el) el.textContent = value;
 }
 
+// Preserve required/optional markers inside labels/headings (keeps <span class="req">*</span> etc.)
+function setLeadingText(id, value){
+  const el = document.getElementById(id);
+  if(!el) return;
+  // If first child is a text node, update only it; keep the rest (spans)
+  if(el.firstChild && el.firstChild.nodeType === Node.TEXT_NODE){
+    el.firstChild.nodeValue = value + (value.endsWith(" ") ? "" : "");
+  } else {
+    // fallback
+    el.textContent = value;
+  }
+}
+
 function setLanguage(lang){
   const t = translations[lang] || translations.fr;
 
@@ -195,18 +208,18 @@ function setLanguage(lang){
   // Contact page labels
   setText("contactTitle", t.contact_title);
   setText("labelName", t.contact_name);
-  setText("labelEmail", t.contact_email);
-  setText("labelPhone", t.contact_phone);
-  setText("labelWhatsapp", t.contact_whatsapp);
-  setText("labelLocation", t.contact_location);
+  setLeadingText("labelEmail", t.email);
+  setLeadingText("labelPhone", t.phone);
+  setLeadingText("labelWhatsapp", t.whatsapp);
+  setLeadingText("labelLocation", t.loc_label);
   setText("locationHelp", t.contact_location_help);
   const gpsBtn = document.getElementById("useGpsBtn");
   if(gpsBtn) gpsBtn.textContent = t.loc_use_gps;
   const clearBtn = document.getElementById("clearLocBtn");
   if(clearBtn) clearBtn.textContent = t.loc_clear;
 
-  setText("labelService", t.contact_service);
-  setText("labelMessage", t.contact_message);
+  setLeadingText("labelService", t.service);
+  setLeadingText("labelMessage", t.description);
 
   const submit = document.getElementById("contactSubmit");
   if(submit) submit.textContent = t.contact_submit;
@@ -384,7 +397,7 @@ function setLanguage(lang){
   setText("servicesPageTitle", t.services_page_title);
 
   setText("contactTitle", t.contact_title);
-  setText("segTitle", t.seg_title);
+  setLeadingText("segTitle", t.seg_title);
   setText("labelClientType", t.seg_type);
   setText("segHint", t.seg_hint);
   setText("ctIndividual", t.ct_individual);
@@ -392,9 +405,9 @@ function setLanguage(lang){
   setText("ctEnterprise", t.ct_enterprise);
   setText("ctProject", t.ct_project);
 
-  setText("labelBusinessNameCommerce", t.commerce_name);
-  setText("labelActivityType", t.commerce_activity);
-  setText("labelActivityOther", t.commerce_other);
+  setLeadingText("labelBusinessNameCommerce", t.commerce_name);
+  setLeadingText("labelActivityType", t.commerce_activity);
+  setLeadingText("labelActivityOther", t.commerce_other);
   setText("actRestaurant", t.act_restaurant);
   setText("actShop", t.act_shop);
   setText("actHotel", t.act_hotel);
@@ -403,23 +416,23 @@ function setLanguage(lang){
   setText("actPharmacy", t.act_pharmacy);
   setText("actOther", t.act_other);
 
-  setText("labelBusinessNameEnterprise", t.enterprise_name);
-  setText("labelRequesterRole", t.requester_role);
+  setLeadingText("labelBusinessNameEnterprise", t.enterprise_name);
+  setLeadingText("labelRequesterRole", t.requester_role);
 
-  setText("labelProjectName", t.project_name);
-  setText("labelSiteManager", t.site_manager);
-  setText("labelSiteArea", t.site_area);
-  setText("labelProjectDuration", t.project_duration);
+  setLeadingText("labelProjectName", t.project_name);
+  setLeadingText("labelSiteManager", t.site_manager);
+  setLeadingText("labelSiteArea", t.site_area);
+  setLeadingText("labelProjectDuration", t.project_duration);
 
   setText("clientInfoTitle", t.client_info_title);
-  setText("labelLastName", t.last_name);
-  setText("labelFirstNames", t.first_names);
-  setText("labelPhone", t.phone);
-  setText("labelWhatsapp", t.whatsapp);
-  setText("labelEmail", t.email);
+  setLeadingText("labelLastName", t.last_name);
+  setLeadingText("labelFirstNames", t.first_names);
+  setLeadingText("labelPhone", t.phone);
+  setLeadingText("labelWhatsapp", t.whatsapp);
+  setLeadingText("labelEmail", t.email);
 
-  setText("locTitle", t.loc_title);
-  setText("labelLocation", t.loc_label);
+  setLeadingText("locTitle", t.loc_title);
+  setLeadingText("labelLocation", t.loc_label);
   setText("locationHelp", t.loc_help);
 
   const gpsBtn = document.getElementById("useGpsBtn");
@@ -428,14 +441,14 @@ function setLanguage(lang){
   if(clearBtn) clearBtn.textContent = t.loc_clear;
 
   setText("jobTitle", t.job_title);
-  setText("labelService", t.service);
-  setText("labelPreferredTime", t.preferred_time);
-  setText("labelUrgency", t.urgency);
+  setLeadingText("labelService", t.service);
+  setLeadingText("labelPreferredTime", t.preferred_time);
+  setLeadingText("labelUrgency", t.urgency);
   setText("urgencyHint", t.urgency_hint);
   setText("urgentYes", t.urgent_yes);
   setText("urgentNo", t.urgent_no);
-  setText("labelMessage", t.description);
-  setText("labelPhotos", t.photos);
+  setLeadingText("labelMessage", t.description);
+  setLeadingText("labelPhotos", t.photos);
   setText("photosHint", t.photos_hint);
   setText("requiredNote", t.required_note);
 
