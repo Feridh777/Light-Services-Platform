@@ -35,3 +35,6 @@ V17:
 V18:
 - Accueil: suppression du texte 'Cliquer pour voir les détails' (retour style V13)
 - Page Services: détails (liste de dépannages) affichés au clic pour chaque service
+
+V19:
+- Page accueil: ajout liste résumée des dépannages par service avec 'etc.' (sans modifier le reste)
