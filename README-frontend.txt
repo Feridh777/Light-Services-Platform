@@ -19,3 +19,6 @@ V12:
 V13:
 - Description rendue optionnelle
 - Urgence Oui/Non alignée et plus harmonieuse
+
+V14:
+- Texte hero (accueil) mis à jour avec 'etc.' en FR/EN (HTML + traductions JS)
