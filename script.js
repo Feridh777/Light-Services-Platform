@@ -326,14 +326,26 @@ function debounce(fn, delay){
 }
 
 async function nominatimSearch(q){
-  const url = `https://nominatim.openstreetmap.org/search?format=jsonv2&limit=6&q=${encodeURIComponent(q)}`;
+  // Suggestions (Photon) - CORS friendly, no API key for MVP
+  const lang = localStorage.getItem("ls_lang") || "fr";
+  const url = `https://photon.komoot.io/api/?limit=6&lang=${encodeURIComponent(lang)}&q=${encodeURIComponent(q)}`;
   const res = await fetch(url, {headers: {"Accept":"application/json"}});
   if(!res.ok) return [];
-  return await res.json();
+  const data = await res.json();
+  const feats = data && data.features ? data.features : [];
+  return feats.map(f=>({
+    display_name: f.properties?.name
+      ? `${f.properties.name}${f.properties.city ? ", " + f.properties.city : ""}${f.properties.country ? ", " + f.properties.country : ""}`
+      : (f.properties?.label || ""),
+    lat: f.geometry?.coordinates ? f.geometry.coordinates[1] : "",
+    lon: f.geometry?.coordinates ? f.geometry.coordinates[0] : ""
+  }));
 }
 
 async function nominatimReverse(lat, lon){
-  const url = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${encodeURIComponent(lat)}&lon=${encodeURIComponent(lon)}`;
+  // Reverse geocoding (BigDataCloud) - simple, CORS friendly for MVP
+  const lang = localStorage.getItem("ls_lang") || "fr";
+  const url = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${encodeURIComponent(lat)}&longitude=${encodeURIComponent(lon)}&localityLanguage=${encodeURIComponent(lang)}`;
   const res = await fetch(url, {headers: {"Accept":"application/json"}});
   if(!res.ok) return null;
   return await res.json();
@@ -352,11 +364,15 @@ function showSuggestions(items){
     b.type = "button";
     b.textContent = it.display_name || it.name || "";
     b.addEventListener("click", ()=>{
-      const input = document.getElementById("location");
-      if(input) input.value = b.textContent;
-      box.style.display = "none";
-      box.innerHTML = "";
-    });
+  const input = document.getElementById("location");
+  const latEl = document.getElementById("latitude");
+  const lonEl = document.getElementById("longitude");
+  if(input) input.value = b.textContent;
+  if(latEl) latEl.value = (it.lat ?? "");
+  if(lonEl) lonEl.value = (it.lon ?? "");
+  box.style.display = "none";
+  box.innerHTML = "";
+});
     box.appendChild(b);
   });
   box.style.display = "block";
@@ -383,6 +399,7 @@ function setupLocationUX(){
 
   if(input){
     const doSearch = debounce(async ()=>{
+      const latEl = document.getElementById("latitude"); const lonEl = document.getElementById("longitude"); if(latEl) latEl.value=""; if(lonEl) lonEl.value="";
       const q = input.value.trim();
       if(q.length < 3){ hideSuggestions(); return; }
       try{
@@ -418,8 +435,20 @@ function setupLocationUX(){
           const lon = pos.coords.longitude;
           // Try reverse geocoding for a friendly place name
           const rev = await nominatimReverse(lat, lon);
-          const best = rev?.display_name ? rev.display_name : `${lat.toFixed(6)}, ${lon.toFixed(6)}`;
-          if(input) input.value = best;
+const latEl = document.getElementById("latitude");
+const lonEl = document.getElementById("longitude");
+if(latEl) latEl.value = lat;
+if(lonEl) lonEl.value = lon;
+
+const parts = [];
+if(rev){
+  if(rev.locality) parts.push(rev.locality);
+  else if(rev.city) parts.push(rev.city);
+  if(rev.principalSubdivision) parts.push(rev.principalSubdivision);
+  if(rev.countryName) parts.push(rev.countryName);
+}
+const best = parts.length ? parts.join(", ") : `${lat.toFixed(6)}, ${lon.toFixed(6)}`;
+if(input) input.value = best;
         }catch(e){
           if(input) input.value = `${pos.coords.latitude.toFixed(6)}, ${pos.coords.longitude.toFixed(6)}`;
         }finally{

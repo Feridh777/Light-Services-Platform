@@ -44,3 +44,6 @@ V20:
 
 V21 (FIX basé sur V20):
 - Page Services: clic sur service => liste des dépannages s'affiche (toggle fiable)
+
+V22:
+- Localisation: suggestions (Photon) + GPS reverse (BigDataCloud) + sauvegarde latitude/longitude
