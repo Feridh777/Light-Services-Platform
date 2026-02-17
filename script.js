@@ -9,14 +9,6 @@ const translations = {
     btn_services: "Voir nos services",
     section_services: "Nos services",
     s1_title: "Plomberie",
-    s1_text: "Fuites, robinets, WC, évacuations, installations, etc.",
-    s2_text: "Pannes, prises, éclairage, tableaux, sécurité, etc.",
-    s3_text: "Ouverture, remplacement, renforcement, clés, etc.",
-    s4_text: "Clim, frigo, gazinière, chauffe-eau, ventilation, etc.",
-    s5_text: "Portes, fenêtres, meubles, ajustements, etc.",
-    s6_text: "Petits travaux, réparations, finitions, etc.",
-    s7_text: "Interventions rapides 24/7, assistance urgente, etc.",
-    s8_text: "Contrôles, entretien, prévention, diagnostics, etc.",
     s1Text: "Fuites, débouchage, installation et réparations.",
     s2_title: "Électricité",
     s2Text: "Pannes, installations, mise aux normes et maintenance.",
@@ -107,14 +99,6 @@ const translations = {
     btn_services: "See services",
     section_services: "Our services",
     s1_title: "Plumbing",
-    s1_text: "Leaks, taps, toilets, drains, installation, etc.",
-    s2_text: "Outages, sockets, lighting, panels, safety, etc.",
-    s3_text: "Opening, replacement, reinforcement, keys, etc.",
-    s4_text: "AC, fridge, cooker, water heater, ventilation, etc.",
-    s5_text: "Doors, windows, furniture, adjustments, etc.",
-    s6_text: "Small works, repairs, finishing, etc.",
-    s7_text: "Fast 24/7 response, emergency support, etc.",
-    s8_text: "Checkups, maintenance, prevention, diagnostics, etc.",
     s1Text: "Leaks, unblocking, installation and repairs.",
     s2_title: "Electricity",
     s2Text: "Outages, installations, compliance and maintenance.",
@@ -272,6 +256,8 @@ function setLanguage(lang){
   const msg = document.getElementById("message"); if(msg) msg.placeholder = t.contact_message;
 
   localStorage.setItem("ls_lang", lang);
+  populateServiceDetails(t);
+  setupServiceToggles();
 }
 
 

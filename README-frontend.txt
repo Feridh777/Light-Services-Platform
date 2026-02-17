@@ -42,6 +42,5 @@ V19:
 V20:
 - Fix page Services: initialisation systématique des sous-listes + toggle au clic (JS)
 
-V21:
-- Résumés services (FR/EN) correctement gérés par la traduction (page accueil)
-- Page Services: clic affiche la liste des dépannages (toggle fiable)
+V21 (FIX basé sur V20):
+- Page Services: clic sur service => liste des dépannages s'affiche (toggle fiable)
